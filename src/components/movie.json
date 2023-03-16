@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "title": "The Shawshank Redemption",
+        "genre": "Drama",
+        "rating": 9.3,
+        "duration": "175 minutes",
+        "poster": "https://movieposters2.com/images/630255-b.jpg",
+        "description": "Adapted from the Stephen King novella Rita Hayworth and Shawshank Redemption, the film tells the story of Andy Dufresne, a banker who spends 19 years in Shawshank State Prison for the murder of his wife and her lover despite his claims of innocence. During his time at the prison, he befriends a fellow inmate, Ellis Boyd 'Red' Redding, and finds himself protected by the guards after the warden begins using him in his money laundering operation.",
+        "date": "September 23, 1994",
+        "price": 13
+    },
+    {
+        "id": 2,
+        "title": "The Godfather",
+        "genre": "Drama, Crime",
+        "rating": 9.2,
+        "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg",
+        "price": 10
+    },
+    {
+        "id": 3,
+        "title": "The Dark Knight",
+        "rating": 9.0,
+        "genre": "Action, Crime, Drama, Thriller",
+        "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        "price": 9
+    },
+    {
+        "id": 4,
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "rating": 8.8,
+        "genre": "Adventure, Fantasy, Action",
+        "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/56zTpe2xvaA4alU51sRWPoKPYZy.jpg",
+        "price": 6
+    },
+    {
+        "id": 5,
+        "title": "Forrest Gump",
+        "rating": 8.8,
+        "genre": "Comedy, Drama, Romance",
+        "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/clolk7rB5lAjs41SD0Vt6IXYLMm.jpg",
+        "price": 4
+    },
+    {
+        "id": 6,
+        "title": "Inception",
+        "rating": 8.7,
+        "genre": "Action, Science Fiction, Adventure",
+        "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+        "price": 5
+    },
+    {
+        "id": 7,
+        "title": "Avengers: Infinity War",
+        "rating": 8.4,
+        "genre": "Action, Science Fiction, Adventure",
+        "poster": "https://www.themoviedb.org/t/p/original/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+        "price": 12
+    },
+    {
+        "id": 8,
+        "title": "Black Water: Abyss",
+        "rating": 4.6,
+        "genre": "Action, Drama, Horror",
+        "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pmAv14TPE2vKMIRrVeCd1Ll7K94.jpg",
+        "price": 10
+    },
+    {
+        "id": 9,
+        "title": "The SpongeBob Movie: Sponge on the Run",
+        "rating": 5.9,
+        "genre": "Family, Animation, Fantasy, Adventure, Comedy",
+        "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jlJ8nDhMhCYJuzOw3f52CP1W8MW.jpg",
+        "price": 7
+    },
+    {
+        "id": 10,
+        "title": "The Matrix",
+        "rating": 8.7,
+        "genre": "Action, Science Fiction",
+        "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+        "price": 5
+    }
+]

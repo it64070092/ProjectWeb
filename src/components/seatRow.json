@@ -1,0 +1,62 @@
+[
+    [
+        { "row": 1, "column": "A", "status": "available" },
+        { "row": 1, "column": "B", "status": "available" },
+        { "row": 1, "column": "C", "status": "available" },
+        { "row": 1, "column": "F", "status": "available" },
+        { "row": 1, "column": "D", "status": "available" },
+        { "row": 1, "column": "E", "status": "available" },
+        { "row": 1, "column": "G", "status": "available" },
+        { "row": 1, "column": "H", "status": "available" }
+    ],
+    [
+        { "row": 2, "column": "A", "status": "available" },
+        { "row": 2, "column": "B", "status": "available" },
+        { "row": 2, "column": "C", "status": "available" },
+        { "row": 2, "column": "D", "status": "occupied" },
+        { "row": 2, "column": "E", "status": "occupied" },
+        { "row": 2, "column": "F", "status": "available" },
+        { "row": 2, "column": "G", "status": "available" },
+        { "row": 2, "column": "H", "status": "available" }
+    ],
+    [
+        { "row": 3, "column": "A", "status": "available" },
+        { "row": 3, "column": "B", "status": "available" },
+        { "row": 3, "column": "C", "status": "occupied" },
+        { "row": 3, "column": "D", "status": "available" },
+        { "row": 3, "column": "E", "status": "available" },
+        { "row": 3, "column": "F", "status": "available" },
+        { "row": 3, "column": "G", "status": "occupied" },
+        { "row": 3, "column": "H", "status": "available" }
+    ],
+    [
+        { "row": 4, "column": "A", "status": "available" },
+        { "row": 4, "column": "B", "status": "available" },
+        { "row": 4, "column": "C", "status": "available" },
+        { "row": 4, "column": "D", "status": "available" },
+        { "row": 4, "column": "E", "status": "available" },
+        { "row": 4, "column": "F", "status": "available" },
+        { "row": 4, "column": "G", "status": "available" },
+        { "row": 4, "column": "H", "status": "available" }
+    ],
+    [
+        { "row": 5, "column": "A", "status": "available" },
+        { "row": 5, "column": "C", "status": "available" },
+        { "row": 5, "column": "B", "status": "available" },
+        { "row": 5, "column": "D", "status": "available" },
+        { "row": 5, "column": "E", "status": "available" },
+        { "row": 5, "column": "F", "status": "available" },
+        { "row": 5, "column": "G", "status": "available" },
+        { "row": 5, "column": "H", "status": "available" }
+    ],
+    [
+        { "row": 6, "column": "B", "status": "available" },
+        { "row": 6, "column": "C", "status": "available" },
+        { "row": 6, "column": "D", "status": "available" },
+        { "row": 6, "column": "A", "status": "available" },
+        { "row": 6, "column": "E", "status": "available" },
+        { "row": 6, "column": "F", "status": "available" },
+        { "row": 6, "column": "G", "status": "available" },
+        { "row": 6, "column": "H", "status": "available" }
+    ]
+]
