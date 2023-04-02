@@ -31,7 +31,7 @@
                             <button
                                 class="bg-gray-500 h-12 w-14 border border-gray-400 rounded-tl-lg rounded-tr-lg cursor-pointer"
                                 :class="{
-                                    'bg-blue-400': seat.status === 'selected',
+                                    'bg-blue-800': seat.status === 'selected',
                                     'bg-white': seat.status === 'occupied',
                                 }" @click="onSeatSelect(rowIndex, seatIndex);">
                             </button>
@@ -50,6 +50,7 @@
 <script>
 import movieall from '../components/movie.json';
 import seatsall from '../components/seatRow.json'
+var bookings = localStorage.getItem('booking')
 
 export default {
     data() {
@@ -57,11 +58,64 @@ export default {
             movie: movieall,
             seatRows: seatsall,
             selectedSeats: [],
+            bookingseat: JSON.parse(bookings) || []
         };
+    },
+    props: {
+        selectdate: {
+            type: String,
+            required: true
+        },
+        selecttime: {
+            type: String,
+            required: true
+        },
+        selectedScreen: {
+            type: String,
+            required: true
+        },
+        selectedCinema: {
+            type: Object,
+            required: true
+        },
+        selectedLocation: {
+            type: Object,
+            required: true
+        }
     },
     mounted() {
         const id = this.$route.params.id;
         this.movie = this.movie.filter(movie => movie.id == id)
+        const values = [];
+        const columns = [];
+
+        for (var items in this.bookingseat) {
+            if (this.bookingseat[items].movie.id == id
+            && this.bookingseat[items].location.id == this.selectedLocation.id
+            && this.bookingseat[items].date == this.selectdate
+            && this.bookingseat[items].screen.id == this.selectedScreen.id
+            && this.bookingseat[items].cinema.id == this.selectedCinema.id
+            && this.bookingseat[items].time == this.selecttime
+            ) {
+                for (var seats in this.bookingseat[items].seats) {
+                    values.push(this.bookingseat[items].seats[seats].id)
+                    columns.push((this.bookingseat[items].seats[seats].id - 1) % 8)
+                }
+            }
+
+        }
+        this.seatRows.forEach(seatRow => {
+            for (items in this.bookingseat) {
+                for (let num in columns) {
+                    for (let item in values) {
+                        if (seatRow[columns[num]].id == values[item]) {
+                            seatRow[columns[num]].status = 'occupied'
+                        }
+                    }
+                }
+            }
+
+        })
     },
     methods: {
         onSeatSelect(rowIndex, seatIndex) {
@@ -70,6 +124,7 @@ export default {
                 seat.status = seat.isSelected ? "available" : "selected";
                 seat.isSelected = !seat.isSelected;
                 this.$emit('seats-selected', this.selectedSeats);
+                this.$emit('seats-booking', this.bookingseat);
                 if (seat.isSelected) {
                     this.selectedSeats.push(seat);
                 } else {
@@ -82,6 +137,7 @@ export default {
         },
     },
 };
+
 </script>
 
 <style scoped>

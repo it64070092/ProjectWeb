@@ -3,11 +3,16 @@ import App from './App.vue'
 import './assets/tailwind.css'
 import { createWebHistory, createRouter } from "vue-router";
 import '@fortawesome/fontawesome-svg-core';
-import Login from './views/LoginTab.vue'
-import Signup from './views/SignupTab.vue';
-import Landing from './views/LandingTab.vue';
-import Catalog from './views/CatalogTab.vue';
-import MoviePage from "./views/MoviePageTab.vue";
+import Login from './views/normal/LoginTab.vue';
+import Signup from './views/normal/SignupTab.vue';
+import AMLanding from './views/admin/LandingTab.vue';
+import AMCatalog from './views/admin/CatalogTab.vue';
+import AMBooking from "./views/admin/BookingHistory.vue";
+import NMLanding from './views/normal/LandingTab.vue';
+import CMLanding from './views/customer/LandingTab.vue';
+import CMCatalog from './views/customer/CatalogTab.vue';
+import CMMoviePage from "./views/customer/MoviePageTab.vue";
+import CMBooking from "./views/customer/BookingHistory.vue";
 import VueCarousel from 'vue-carousel';
 
 
@@ -21,22 +26,46 @@ const routes = [
         component: Signup,
     },
     {
-      path: "/landing",
-      component: Landing,
+      path: "/cmlanding",
+      component: CMLanding,
+    },    {
+      path: "/amlanding",
+      component: AMLanding,
     },
     {
-      path: "/catalog",
-      component: Catalog,
+      path: "/nmlanding",
+      component: NMLanding,
+    },
+    {
+      path: "/cmcatalog",
+      component: CMCatalog,
+    },
+    {
+      path: "/cmbooking",
+      component: CMBooking,
+    },
+    {
+      path: "/amcatalog",
+      component: AMCatalog,
+    },
+    {
+      path: "/ambooking",
+      component: AMBooking,
     },
     {
       path: "/movie/:id",
       name: "movie",
-      component: MoviePage,
+      component: CMMoviePage,
     },
-    { path: "/:pathMatch(.*)*", redirect: "/landing" },
+    { path: "/:pathMatch(.*)*", redirect: "/nmlanding" },
+    { path: "/:pathMatch(.*)*", redirect: "/cmlanding" },
+    { path: "/:pathMatch(.*)*", redirect: "/amlanding" },
+    { path: "/:pathMatch(.*)*", redirect: "/cmbooking" },
+    { path: "/:pathMatch(.*)*", redirect: "/ambooking" },
     { path: "/:pathMatch(.*)*", redirect: "/login" },
     { path: "/:pathMatch(.*)*", redirect: "/signup" },
-    { path: "/:pathMatch(.*)*", redirect: "/catalog" },
+    { path: "/:pathMatch(.*)*", redirect: "/cmcatalog" },
+    { path: "/:pathMatch(.*)*", redirect: "/amcatalog" },
   ];
 
   const router = createRouter({

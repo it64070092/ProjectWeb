@@ -25,7 +25,7 @@
       </div>
       <div v-bind:class="{ 'hidden': !showMenu, 'flex': showMenu }" class="md:flex items-center">
         <ul class="flex flex-col lg:flex-row list-none ml-auto">
-          <router-link to="/nmlanding">
+          <button @click="goto">
             <li class="nav-item">
               <a class="px-5 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75"
                 href="">
@@ -33,21 +33,24 @@
                   class="ml-2">Home</span>
               </a>
             </li>
-          </router-link>
-          <router-link to="/login">
-            <li class="nav-item">
-              <a class="px-5 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
-                <i class="fab fa-twitter text-lg leading-lg text-white opacity-75" /><span class="ml-2">LOGIN</span>
-              </a>
-            </li>
-          </router-link>
-          <router-link to="/signup">
-            <li class="nav-item">
-              <a class="px-5 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
-                <i class="fab fa-pinterest text-lg leading-lg text-white opacity-75" /><span class="ml-2">SIGNUP</span>
-              </a>
-            </li>
-          </router-link>
+          </button>
+          <li class="nav-item relative">
+            <button
+              class="px-5 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75"
+              v-on:click="toggleDropdown">
+              <i class="fab fa-twitter text-lg leading-lg text-white opacity-75" /><span class="ml-2">{{ name[0].username
+              }}</span>
+              <i class="fas fa-chevron-down ml-2"></i>
+            </button>
+            <div v-if="showLogoutPopup" class="absolute right-0 mt-2 w-48 rounded-lg shadow-xl z-10">
+              <div class="bg-white rounded-lg">
+                <a class="block px-4 py-2 text-gray-800 hover:bg-gray-100" href="#">Profile</a>
+                <button class="block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left" @click="logout">
+                  Logout
+                </button>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -56,6 +59,7 @@
 
 <script>
 import movies from '../components/movie.json';
+var name = localStorage.getItem('User');
 
 export default {
 
@@ -64,12 +68,32 @@ export default {
       showMenu: false,
       movies: movies, // your list of movies
       searchQuery: '',
+      showLogoutPopup: false,
       selectedGenre: '',
+      name: JSON.parse(name)
     }
   },
   methods: {
     toggleNavbar: function () {
       this.showMenu = !this.showMenu;
+    },
+    toggleDropdown: function () {
+      this.showLogoutPopup = !this.showLogoutPopup;
+    },
+    goto: function () {
+      if (this.name[0].type == 'admin') {
+        this.$router.push('/amlanding')
+      }else if (this.name[0].type == 'customer'){
+        this.$router.push('/cmlanding')
+      }else{
+        this.$router.push('/nmlanding')
+      }
+    },
+    logout: function () {
+      alert("Logout success");
+      localStorage.removeItem('User')
+      this.$router.push('/nmlanding')
+      this.showLogoutPopup = false; // hide the logout popup
     }
   },
   watch: {
